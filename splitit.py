@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd
-
 exurl="https://docs.google.com/spreadsheets/d/1cCvrf6drHcHTTPZhX1Fswmut7XPysyIv0Kil65UyiW4/edit?usp=sharing"
 conn = st.connection("gsheets", type=GSheetsConnection)
 
@@ -26,8 +25,9 @@ positive_balances = {person: balance for person, balance in summary.items() if b
 for person, balance in positive_balances.items():
     for creditor, debt in summary.items():
         if debt < 0:
-            st.write(f"{person} owes {creditor} ${abs(debt)}")
+            st.write("# Final Balances:")
+            st.write(f"## {person} owes {creditor} ${abs(debt)}")
 
 # Display the summary of final balances
-st.write("Final Balances:")
-st.write(summary)
+#st.write("Final Balances:")
+#st.write(summary)
