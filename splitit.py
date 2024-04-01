@@ -26,7 +26,7 @@ for person, balance in positive_balances.items():
     for creditor, debt in summary.items():
         if debt < 0:
             st.write("# Final Balances:")
-            st.write(f"## {person} owes {creditor} ${abs(debt)}")
+            st.write(f"## {person} owes {creditor} ¥{abs(debt)}")
 
 # Display the summary of final balances
 #st.write("Final Balances:")
