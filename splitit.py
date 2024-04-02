@@ -4,27 +4,27 @@ import pandas as pd
 
 
 # CSS code to hide the icon
-#We define a variable hide_github_icon_css containing the CSS code.
-hide_github_icon_css = """
+hide menu="""
 <style>
-/* Hide the Streamlit GitHub icon */
-.reportview-container .main-container > header {
-    display: none;
-}
-</style>
-"""
-# We use st.markdown to render the CSS code. Note that we set unsafe_allow_html=True to allow including HTML tags in the markdown.
-st.markdown(hide_github_icon_css, unsafe_allow_html=True)
-
-# CSS code to hide the menu
-hide_menu_css = """
-<style>
-/* Hide the Streamlit Menu */
 #MainMenu {
-  visibility: hidden;
-}
+visibility:hidden;
+｝
+
+footer{
+visibility:visible;
+｝
+
+footer:after{
+content: Copyright @ 2021: Streamlit';
+display: block;
+position: relative;
+color:tomato;
+padding: 5px;
+top: 3px;
+｝
 </style>
 """
+
 
 exurl="https://docs.google.com/spreadsheets/d/1cCvrf6drHcHTTPZhX1Fswmut7XPysyIv0Kil65UyiW4/edit?usp=sharing"
 conn = st.connection("gsheets", type=GSheetsConnection)
