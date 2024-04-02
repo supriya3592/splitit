@@ -4,7 +4,7 @@ import pandas as pd
 
 
 # CSS code to hide the icon
-hide menu="""
+hide_menu="""
 <style>
 #MainMenu {
 visibility:hidden;
