@@ -56,3 +56,4 @@ for person, balance in positive_balances.items():
 # Display the summary of final balances
 #st.write("Final Balances:")
 #st.write(summary)
+st.markdown(hide_menu,unsafe_allow_html=True)
