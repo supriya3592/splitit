@@ -3,10 +3,11 @@ from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 
 
-# CSS code to hide the icon (corrected indentation and closing brace)
+
+# CSS code with increased specificity (optional)
 hide_menu = """
 <style>
-#MainMenu {
+#root #MainMenu {
   visibility: hidden;
 }
 
