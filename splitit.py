@@ -7,20 +7,20 @@ import pandas as pd
 hide_menu="""
 <style>
 #MainMenu {
-visibility:hidden;
+    visibility:hidden;
 ｝
 
 footer{
-visibility:visible;
+    visibility:visible;
 ｝
 
 footer:after{
-content: 'Copyright @ 2021: Streamlit';
-display: block;
-position: relative;
-color:tomato;
-padding: 5px;
-top: 3px;
+    content:'Copyright @ 2021: Streamlit';
+    display:block;
+    position:relative;
+    color:tomato;
+    padding:5px;
+    top:3px;
 ｝
 </style>
 """
