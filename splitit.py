@@ -3,28 +3,28 @@ from streamlit_gsheets import GSheetsConnection
 import pandas as pd
 
 
-# CSS code to hide the icon
-hide_menu="""
+# CSS code to hide the icon (corrected indentation and closing brace)
+hide_menu = """
 <style>
 #MainMenu {
-    visibility:hidden;
-｝
+  visibility: hidden;
+}
 
-footer{
-    visibility:visible;
-｝
+footer {
+  visibility: visible;
+}
 
-footer:after{
-    content:'Copyright @ 2021: Streamlit';
-    display:block;
-    position:relative;
-    color:tomato;
-    padding:5px;
-    top:3px;
-｝
+footer:after {
+  content:'Copyright @ 2021: Streamlit';
+  display: block;
+  position: relative;
+  color: tomato;
+  padding: 5px;
+  top: 3px;
+}
 </style>
 """
-
+st.markdown(hide_menu, unsafe_allow_html=True)
 
 exurl="https://docs.google.com/spreadsheets/d/1cCvrf6drHcHTTPZhX1Fswmut7XPysyIv0Kil65UyiW4/edit?usp=sharing"
 conn = st.connection("gsheets", type=GSheetsConnection)
@@ -56,4 +56,4 @@ for person, balance in positive_balances.items():
 # Display the summary of final balances
 #st.write("Final Balances:")
 #st.write(summary)
-st.markdown(hide_menu,unsafe_allow_html=True)
+
