@@ -16,6 +16,15 @@ hide_github_icon_css = """
 # We use st.markdown to render the CSS code. Note that we set unsafe_allow_html=True to allow including HTML tags in the markdown.
 st.markdown(hide_github_icon_css, unsafe_allow_html=True)
 
+# CSS code to hide the menu
+hide_menu_css = """
+<style>
+/* Hide the Streamlit Menu */
+#MainMenu {
+  visibility: hidden;
+}
+</style>
+"""
 
 exurl="https://docs.google.com/spreadsheets/d/1cCvrf6drHcHTTPZhX1Fswmut7XPysyIv0Kil65UyiW4/edit?usp=sharing"
 conn = st.connection("gsheets", type=GSheetsConnection)
