@@ -15,7 +15,7 @@ visibility:visible;
 ｝
 
 footer:after{
-content: Copyright @ 2021: Streamlit';
+content: 'Copyright @ 2021: Streamlit';
 display: block;
 position: relative;
 color:tomato;
