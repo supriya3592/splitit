@@ -67,6 +67,7 @@ st.write(f"## {owe} owes {cred} ¥{bal}")
 
 # Group the DataFrame by months and calculate the sum of values for each month
 monthly_data = df['Amount'].resample('M').sum()
+st.write("# Monthly Expense:")
 st.dataframe(monthly_data)
 
 
