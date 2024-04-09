@@ -41,6 +41,13 @@ df=df.set_index(df['Date of expense'],drop=True)
 monthly_data = df['Amount'].resample('M').sum()
 st.dataframe(monthly_data)
 
+
+# -- PLOT DATAFRAME
+monthly_data=monthly_data.reset_index()
+fig = px.bar(monthly_data,x='Date of expense',y='Amount',template='plotly_white',title='Mahine ka Hisab')
+st.plotly_chart(fig)
+
+
 # Perform expense splitting and summarizing final balances
 summary = {}
 for index, row in df.iterrows():
@@ -64,9 +71,4 @@ for person, balance in positive_balances.items():
             st.write(f"## {person} owes {creditor} ¥{abs(debt)}")
 
 
-
-# -- PLOT DATAFRAME
-monthly_data=monthly_data.reset_index()
-fig = px.bar(monthly_data,x='Date of expense',y='Amount',template='plotly_white',title='Mahine ka Hisab')
-st.plotly_chart(fig)
 
