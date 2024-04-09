@@ -33,7 +33,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(spreadsheet=exurl)
 df['Date of expense']=pd.to_datetime(df['Date of expense'],dayfirst=True)
-st.dataframe(df)
+
 df=df.set_index(df['Date of expense'],drop=True)
 
 
