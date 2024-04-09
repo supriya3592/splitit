@@ -82,4 +82,4 @@ color='r',
 template='plotly _white',
 title=f'Mahine ka Hisab'
 ）
-st. plotly_chart(fig)
+st.plotly_chart(fig)
