@@ -32,7 +32,7 @@ exurl="https://docs.google.com/spreadsheets/d/1cCvrf6drHcHTTPZhX1Fswmut7XPysyIv0
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(spreadsheet=exurl)
-df['Date of expense']=pd.to_datetime(df['Date of expense'],format="%d/%m/%Y")
+df['Date of expense']=pd.to_datetime(df['Date of expense'],dayfirst=True)
 df.set_index(df['Date of expense'],inplace=True,drop=True)
 st.dataframe(df)
 
