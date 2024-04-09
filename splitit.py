@@ -65,6 +65,6 @@ for person, balance in positive_balances.items():
 
 
 # -- PLOT DATAFRAME
-fig = px.bar(monthly_data,x=''Date of expense',y='Amount',color='r',template='plotly_white',title=f'Mahine ka Hisab')
+fig = px.bar(monthly_data,x='Date of expense',y='Amount',color='r',template='plotly_white',title=f'Mahine ka Hisab')
 st.plotly_chart(fig)
 
