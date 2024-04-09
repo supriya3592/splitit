@@ -37,16 +37,6 @@ df['Date of expense']=pd.to_datetime(df['Date of expense'],dayfirst=True)
 df=df.set_index(df['Date of expense'],drop=True)
 
 
-# Group the DataFrame by months and calculate the sum of values for each month
-monthly_data = df['Amount'].resample('M').sum()
-st.dataframe(monthly_data)
-
-
-# -- PLOT DATAFRAME
-monthly_data=monthly_data.reset_index()
-fig = px.bar(monthly_data,x='Date of expense',y='Amount',template='plotly_white',title='Mahine ka Hisab')
-st.plotly_chart(fig)
-
 
 # Perform expense splitting and summarizing final balances
 summary = {}
@@ -73,6 +63,18 @@ for person, balance in positive_balances.items():
 
 st.write("# Final Balances:")
 st.write(f"## {owe} owes {cred} ¥{bal}")
+
+
+# Group the DataFrame by months and calculate the sum of values for each month
+monthly_data = df['Amount'].resample('M').sum()
+st.dataframe(monthly_data)
+
+
+# -- PLOT DATAFRAME
+monthly_data=monthly_data.reset_index()
+fig = px.bar(monthly_data,x='Date of expense',y='Amount',template='plotly_white',title='Mahine ka Hisab')
+st.plotly_chart(fig)
+
 
 
 
