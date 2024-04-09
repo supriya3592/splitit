@@ -33,7 +33,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(spreadsheet=exurl)
 df['Date of expense']=pd.to_datetime(df['Date of expense'],dayfirst=True)
-df.set_index(df['Date of expense'],inplace=True,drop=True)
+df=df.set_index(df['Date of expense'],drop=True)
 st.dataframe(df)
 
 # Group the DataFrame by months and calculate the sum of values for each month
@@ -64,6 +64,7 @@ for person, balance in positive_balances.items():
 
 
 # -- PLOT DATAFRAME
+monthly_data=monthly_data.reset_index()
 fig = px.bar(monthly_data,x=monthly_data.index.name,y='Amount',template='plotly_white',title='Mahine ka Hisab')
 st.plotly_chart(fig)
 
