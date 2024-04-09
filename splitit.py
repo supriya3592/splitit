@@ -33,7 +33,7 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 
 df = conn.read(spreadsheet=exurl)
 df['Date of expense']=pd.to_datetime(df['Date of expense'])
-df.set_index(df['Date of expense'],inplace=True)
+df.set_index(df['Date of expense'],inplace=True,drop=True)
 st.dataframe(df)
 
 # Group the DataFrame by months and calculate the sum of values for each month
