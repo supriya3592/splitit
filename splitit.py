@@ -4,29 +4,6 @@ import pandas as pd
 #import plotly.express as px
 
 
-# CSS code with increased specificity (optional)
-hide_menu = """
-<style>
-#root #MainMenu {
-  visibility: hidden;
-}
-
-footer {
-  visibility: visible;
-}
-
-footer:after {
-  content:'Copyright @ 2021: Streamlit';
-  display: block;
-  position: relative;
-  color: tomato;
-  padding: 5px;
-  top: 3px;
-}
-</style>
-"""
-st.markdown(hide_menu, unsafe_allow_html=True)
-
 
 exurl="https://docs.google.com/spreadsheets/d/1cCvrf6drHcHTTPZhX1Fswmut7XPysyIv0Kil65UyiW4/edit?usp=sharing"
 conn = st.connection("gsheets", type=GSheetsConnection)
