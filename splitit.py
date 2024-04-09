@@ -53,7 +53,8 @@ for index, row in df.iterrows():
         summary[lender] -= split_amount
         summary[borrower] += split_amount
 
-"""# Identify positive balance and update the summary
+"""
+# Identify positive balance and update the summary
 positive_balances = {person: balance for person, balance in summary.items() if balance > 0}
 for person, balance in positive_balances.items():
     for creditor, debt in summary.items():
@@ -62,20 +63,19 @@ for person, balance in positive_balances.items():
             st.write(f"## {person} owes {creditor} ¥{abs(debt)}")
 """
 
-positive_balances = {person: balance for person, balance in summary.items() if balance > 0}
-for person, balance in positive_balances.items():
-  # Find a debtor with a negative balance for this person
-  debtor_found = False
-  for creditor, debt in summary.items():
-    if debt < 0 and summary[person] > 0:  # Check both positive balance and negative debt
-      st.write("# Final Balances:")
-      st.write(f"## {person} owes {creditor} ¥{abs(debt)}")
-      debtor_found = True  # Mark debtor found to avoid duplicates
-      break  # Stop inner loop after finding a debtor
+final_balances = {
+  person: abs(summary[creditor]) if debt < 0 and summary[person] > 0 else "No Debts"
+  for person, balance in summary.items() if balance > 0
+  for creditor, debt in summary.items()
+}
 
-  # Only write "No Debts" if no debtor was found
-  if not debtor_found:
-    st.write(f"## {person} has no debts")
+if final_balances:
+  st.write("# Final Balances:")
+  for person, balance in final_balances.items():
+    if balance != "No Debts":
+      st.write(f"## {person} owes {creditor} ¥{balance}")
+
+
 
 
 # -- PLOT DATAFRAME
