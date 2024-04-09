@@ -61,11 +61,6 @@ for person, balance in positive_balances.items():
             st.write("# Final Balances:")
             st.write(f"## {person} owes {creditor} ¥{abs(debt)}")
 
-# Display the summary of final balances
-#st.write("Final Balances:")
-#st.write(summary)
-
-
 
 
 """
