@@ -74,12 +74,5 @@ plt.ylabel('Kharch bahot hai ;p')
 plt.show()
 """
 # -- PLOT DATAFRAME
-fig = px.bar (
-monthly_data,
-x='Month',
-y='Amount',
-color='r',
-template='plotly _white',
-title=f'Mahine ka Hisab'
-）
+fig = px.bar(monthly_data,x='Month',y='Amount',color='r',template='plotly _white',title=f'Mahine ka Hisab'）
 st.plotly_chart(fig)
