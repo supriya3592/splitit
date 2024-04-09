@@ -28,7 +28,6 @@ footer:after {
 st.markdown(hide_menu, unsafe_allow_html=True)
 
 
-@st.cache_data
 exurl="https://docs.google.com/spreadsheets/d/1cCvrf6drHcHTTPZhX1Fswmut7XPysyIv0Kil65UyiW4/edit?usp=sharing"
 conn = st.connection("gsheets", type=GSheetsConnection)
 
