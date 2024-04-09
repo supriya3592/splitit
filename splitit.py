@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 import pandas as pd
-
+import plotly.express as px
 
 
 # CSS code with increased specificity (optional)
@@ -63,15 +63,8 @@ for person, balance in positive_balances.items():
 
 
 
-"""
-# Plot a bar graph of the monthly data
-monthly_data.plot(kind='bar')
-plt.xlabel('Month')
-plt.ylabel('Kharch bahot hai ;p')
-#plt.title('Sum of Values by Month')
-plt.show()
 
 # -- PLOT DATAFRAME
-fig = px.bar(monthly_data,x='Month',y='Amount',color='r',template='plotly_white',title=f'Mahine ka Hisab')
+fig = px.bar(monthly_data,x=''Date of expense',y='Amount',color='r',template='plotly_white',title=f'Mahine ka Hisab')
 st.plotly_chart(fig)
-"""
+
