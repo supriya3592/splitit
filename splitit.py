@@ -37,7 +37,7 @@ df.set_index(df['Date of expense'],inplace=True,drop=True)
 st.dataframe(df)
 
 # Group the DataFrame by months and calculate the sum of values for each month
-monthly_data = df['Amount'].resample('M').mean()
+monthly_data = df['Amount'].resample('M').sum()
 st.dataframe(monthly_data)
 
 # Perform expense splitting and summarizing final balances
@@ -65,6 +65,6 @@ for person, balance in positive_balances.items():
 
 
 # -- PLOT DATAFRAME
-fig = px.bar(monthly_data,x='Date of expense',y='Amount',color='r',template='plotly_white',title=f'Mahine ka Hisab')
+fig = px.bar(monthly_data,x='Date of expense',y='Amount',template='plotly_white',title='Mahine ka Hisab')
 st.plotly_chart(fig)
 
