@@ -37,7 +37,7 @@ df.set_index(df['Date of expense'],inplace=True)
 st.dataframe(df)
 
 # Group the DataFrame by months and calculate the sum of values for each month
-monthly_data = df['Amount'].groupby(df['date'].dt.to_period('M')).sum()
+monthly_data = df['Amount'].groupby(df['Date of expense'].dt.to_period('M')).sum()
 st.dataframe(monthly_data)
 
 # Perform expense splitting and summarizing final balances
